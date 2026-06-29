@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Портфоліо — CS Student</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.bunny.net/css2?family=inter:wght@300;400;500;600;700;800;900&family=jetbrains-mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body class="bg-grid">
+
+    <!-- ===== НАВІГАЦІЯ ===== -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-[#0c0c0c]/80 backdrop-blur-md border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6 h-14 flex items-center justify-between">
+
+            <!-- Лого -->
+            <a href="#" class="font-mono text-sm font-semibold text-white tracking-wide">
+                Serhii<span class="text-zinc-600">.Kovaliyk</span>
+            </a>
+
+            <!-- Десктоп -->
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#work" class="nav-item">Проєкти</a>
+                <a href="#skills" class="nav-item">Скіли</a>
+                <a href="#about" class="nav-item">Про мене</a>
+                <a href="#contact" class="nav-item">Контакт</a>
+                <button class="btn-main">CV ↓</button>
+            </div>
+
+            <!-- Мобільна кнопка -->
+            <button id="menuBtn" class="md:hidden text-zinc-500" onclick="toggleMenu()">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </button>
+        </div>
+
+    </nav>
+
+    <!-- Мобільне меню -->
+    <div id="mobileMenu" class="mobile-menu fixed top-0 right-0 w-72 h-screen bg-[#0c0c0c] border-l border-white/5 md:hidden z-50 px-8 pt-20">
+        <button onclick="toggleMenu()" class="absolute top-5 right-6 text-zinc-500">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
+        </button>
+        <a href="#work" onclick="toggleMenu()" class="block text-sm text-zinc-500 hover:text-white transition py-3 border-b border-white/5">Проєкти</a>
+        <a href="#skills" onclick="toggleMenu()" class="block text-sm text-zinc-500 hover:text-white transition py-3 border-b border-white/5">Скіли</a>
+        <a href="#about" onclick="toggleMenu()" class="block text-sm text-zinc-500 hover:text-white transition py-3 border-b border-white/5">Про мене</a>
+        <a href="#contact" onclick="toggleMenu()" class="block text-sm text-zinc-500 hover:text-white transition py-3 border-b border-white/5">Контакт</a>
+    </div>
+
+    <!-- ===== HERO ===== -->
+    <section class="pt-14">
+        <div class="max-w-7xl mx-auto px-6 py-20 md:py-32">
+
+            <div class="fade-up" style="animation-delay: 0.1s">
+                <!-- Статус -->
+                <div class="flex items-center gap-2 mb-8">
+                    <span class="status-dot bg-green-500"></span>
+                    <span class="text-zinc-600 text-xs font-mono uppercase tracking-widest">Відкритий до пропозицій</span>
+                </div>
+
+                <!-- Головний заголовок -->
+                <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-[0.95] tracking-tight mb-8">
+                    Сергій<br>
+                    <span class="text-zinc-600">Ковалюк</span>
+                </h1>
+
+                <!-- Підзаголовок -->
+                <p class="text-zinc-500 text-lg md:text-xl max-w-lg leading-relaxed mb-10">
+                    Студент Комп'ютерних Наук. Пишу код, збираю проєкти, 
+                    вивчаю як працює світ.
+                </p>
+
+                <!-- Кнопки -->
+                <div class="flex flex-wrap gap-3">
+                    <a href="#work" class="btn-main">Дивитись роботи</a>
+                    <a href="#contact" class="btn-ghost">Написати мені</a>
+                </div>
+            </div>
+
+            <!-- Стрічка з даними -->
+            <div class="line-accent mt-20"></div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 pt-8 fade-up" style="animation-delay: 0.3s">
+                <div>
+                    <div class="text-3xl font-bold text-white">0</div>
+                    <div class="text-zinc-600 text-sm mt-1">Років в IT</div>
+                </div>
+                <div>
+                    <div class="text-3xl font-bold text-white">0</div>
+                    <div class="text-zinc-600 text-sm mt-1">Проєктів</div>
+                </div>
+                <div>
+                    <div class="text-3xl font-bold text-white">3.8</div>
+                    <div class="text-zinc-600 text-sm mt-1">GPA</div>
+                </div>
+                <div>
+                    <div class="text-3xl font-bold text-white">∞</div>
+                    <div class="text-zinc-600 text-sm mt-1">Чашок кави</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ПРОЄКТИ (Bento Grid) ===== -->
+    <section id="work" class="py-20">
+        <div class="max-w-7xl mx-auto px-6">
+
+            <!-- Заголовок секції -->
+            <div class="flex items-end justify-between mb-12">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white">Обрані роботи</h2>
+                    <p class="text-zinc-600 mt-2 text-sm">Проєкти, якими пишаюсь</p>
+                </div>
+                <a href="https://github.com/KovaliykSerhii" class="text-zinc-600 text-sm hover:text-white transition hidden md:block">
+                    GitHub →
+                </a>
+            </div>
+
+            <!-- Bento Grid -->
+            <div class="projects-bento">
+                <div class="bento p-6 text-center py-12 text-zinc-500 col-span-full">
+                    Проєкти в процесі розробки...
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== НАВИЧКИ (Marquee + Bento) ===== -->
+    <section id="skills" class="py-20">
+        <div class="max-w-7xl mx-auto px-6">
+
+            <div class="flex items-end justify-between mb-12">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white">Стек</h2>
+                    <p class="text-zinc-600 mt-2 text-sm">Інструменти та технології</p>
+                </div>
+            </div>
+
+            <!-- Bento сітка для скілів -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
+                <!-- Frontend / Mobile -->
+                <div class="bento p-6">
+                    <div class="text-zinc-600 text-xs font-mono mb-4 uppercase tracking-widest">Frontend & Mobile</div>
+                    <div class="space-y-2">
+                        <div class="flex items-center justify-between py-2 border-b border-white/5">
+                            <span class="text-white text-sm font-medium">Web Dev</span>
+                        </div>
+                        <div class="flex items-center justify-between py-2 border-b border-white/5">
+                            <span class="text-white text-sm font-medium">React</span>
+                        </div>
+                        <div class="flex items-center justify-between py-2 border-b border-white/5">
+                            <span class="text-white text-sm font-medium">Flutter</span>
+                        </div>
+                        <div class="flex items-center justify-between py-2">
+                            <span class="text-white text-sm font-medium">UX/UI Design</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Backend & Core -->
+                <div class="bento p-6">
+                    <div class="text-zinc-600 text-xs font-mono mb-4 uppercase tracking-widest">Backend & Core</div>
+                    <div class="space-y-2">
+                        <div class="flex items-center justify-between py-2 border-b border-white/5">
+                            <span class="text-white text-sm font-medium">C#</span>
+                        </div>
+                        <div class="flex items-center justify-between py-2 border-b border-white/5">
+                            <span class="text-white text-sm font-medium">C++</span>
+                        </div>
+                        <div class="flex items-center justify-between py-2">
+                            <span class="text-white text-sm font-medium">Python</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Technologies & AI -->
+                <div class="bento p-6">
+                    <div class="text-zinc-600 text-xs font-mono mb-4 uppercase tracking-widest">Technologies</div>
+                    <div class="space-y-2">
+                        <div class="flex items-center justify-between py-2">
+                            <span class="text-white text-sm font-medium">Artificial Intelligence (AI)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Marquee з іконками -->
+            <div class="bento py-4 overflow-hidden">
+                <div class="flex marquee-track whitespace-nowrap">
+                    <span class="text-zinc-700 text-sm mx-8 font-mono">C#</span>
+                    <span class="text-zinc-700 text-sm mx-8 font-mono">C++</span>
+                    <span class="text-zinc-700 text-sm mx-8 font-mono">Python</span>
+                    <span class="text-zinc-700 text-sm mx-8 font-mono">Web Dev</span>
+                    <span class="text-zinc-700 text-sm mx-8 font-mono">Flutter</span>
+                    <span class="text-zinc-700 text-sm mx-8 font-mono">React</span>
+                    <span class="text-zinc-700 text-sm mx-8 font-mono">UX/UI</span>
+                    <span class="text-zinc-700 text-sm mx-8 font-mono">AI</span>
+                    <!-- Дубль для безшовного циклу -->
+                    <span class="text-zinc-700 text-sm mx-8 font-mono">C#</span>
+                    <span class="text-zinc-700 text-sm mx-8 font-mono">C++</span>
+                    <span class="text-zinc-700 text-sm mx-8 font-mono">Python</span>
+                    <span class="text-zinc-700 text-sm mx-8 font-mono">Web Dev</span>
+                    <span class="text-zinc-700 text-sm mx-8 font-mono">Flutter</span>
+                    <span class="text-zinc-700 text-sm mx-8 font-mono">React</span>
+                    <span class="text-zinc-700 text-sm mx-8 font-mono">UX/UI</span>
+                    <span class="text-zinc-700 text-sm mx-8 font-mono">AI</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ПРО МЕНЕ ===== -->
+    <section id="about" class="py-20">
+        <div class="max-w-7xl mx-auto px-6">
+
+            <div class="grid md:grid-cols-2 gap-12">
+
+                <!-- Ліва частина -->
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Про мене</h2>
+                    <div class="line-accent mb-8"></div>
+
+                    <div class="space-y-4 text-zinc-400 leading-relaxed">
+                        <p>
+                            Вчусь на Комп'ютерних Науках і це найкраще що траплялось. 
+                            Люблю розбиратись в тому, як працюють речі — від низькорівневого 
+                            коду до високо-рівневих абстракцій.
+                        </p>
+                        <p>
+                            Зараз фокусуюсь на вивченні <span class="text-white font-medium">веб-розробки</span>, 
+                            <span class="text-white font-medium">мобільних додатків</span> 
+                            та <span class="text-white font-medium">AI</span>.
+                        </p>
+                        <p>
+                            Постійно навчаюсь і експериментую з новими технологіями.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Права частина — деталі -->
+                <div class="space-y-4">
+
+                    <!-- Картка 1 -->
+                    <div class="bento p-6">
+                        <div class="text-zinc-600 text-xs font-mono uppercase tracking-widest mb-3">Зараз вчу</div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="skill-tag">C# & C++</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">Web Dev & React</span>
+                            <span class="skill-tag">Flutter</span>
+                        </div>
+                    </div>
+
+                    <!-- Картка 2 -->
+                    <div class="bento p-6">
+                        <div class="text-zinc-600 text-xs font-mono uppercase tracking-widest mb-3">Інтереси</div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="skill-tag">AI</span>
+                            <span class="skill-tag">UX/UI Design</span>
+                            <span class="skill-tag">Mobile App Dev</span>
+                        </div>
+                    </div>
+
+                    <!-- Картка 3 -->
+                    <div class="bento p-6">
+                        <div class="text-zinc-600 text-xs font-mono uppercase tracking-widest mb-3">Локація</div>
+                        <div class="flex items-center gap-2">
+                            <span class="text-lg">🇺🇦</span>
+                            <span class="text-zinc-400 text-sm">Україна, віддалено</span>
+                        </div>
+                    </div>
+
+                    <!-- Картка 4 -->
+                    <div class="bento p-6">
+                        <div class="text-zinc-600 text-xs font-mono uppercase tracking-widest mb-3">Мова</div>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="skill-tag">Українська 🟢</span>
+                            <span class="skill-tag">Англійська </span>
+                            <span class="skill-tag">Японська 🟡</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ДОСВІД / НАВЧАННЯ ===== -->
+    <section id="experience" class="py-20">
+        <div class="max-w-7xl mx-auto px-6">
+
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-12">Шлях</h2>
+
+            <div class="space-y-0">
+                <!-- Запис 1 -->
+                <div class="flex gap-6 py-8 border-t border-white/5">
+                    <div class="w-32 flex-shrink-0">
+                        <span class="text-zinc-600 text-sm font-mono">2024 —</span>
+                    </div>
+                    <div>
+                        <h3 class="text-white font-semibold">Комп'ютерні науки</h3>
+                        <p class="text-zinc-500 text-sm mt-1">Університет — Бакалавр</p>
+                        <p class="text-zinc-600 text-sm mt-2 max-w-lg">
+                            Алгоритми, дискретна математика, ООП, бази даних, 
+                            штучний інтелект, мережі.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Запис 2 -->
+                <div class="flex gap-6 py-8 border-t border-white/5">
+                    <div class="w-32 flex-shrink-0">
+                        <span class="text-zinc-600 text-sm font-mono">Зараз</span>
+                    </div>
+                    <div>
+                        <h3 class="text-white font-semibold">Самоосвіта</h3>
+                        <p class="text-zinc-500 text-sm mt-1">Додаткові курси та практика</p>
+                        <p class="text-zinc-600 text-sm mt-2 max-w-lg">
+                            Активно вивчаю C#, C++, Python, Web Dev, Flutter, React, UX/UI Design, AI.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== КОНТАКТ ===== -->
+    <section id="contact" class="py-20">
+        <div class="max-w-7xl mx-auto px-6">
+
+            <div class="grid md:grid-cols-2 gap-12">
+
+                <!-- Ліва частина -->
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Давай поговоримо</h2>
+                    <p class="text-zinc-500 mb-10">
+                        Є ідея, проєкт, чи просто хочеш привітатись? 
+                        Пиши — відповім.
+                    </p>
+
+                    <div class="space-y-6">
+                        <a href="mailto:your@email.com" class="flex items-center gap-4 text-zinc-400 hover:text-white transition group">
+                            <div class="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center flex-shrink-0 group-hover:bg-white/10 transition">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                </svg>
+                            </div>
+                            <span class="text-sm">kovaliykserhii@gmail.com</span>
+                        </a>
+                        <a href="https://github.com/KovaliykSerhii" class="flex items-center gap-4 text-zinc-400 hover:text-white transition group">
+                            <div class="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center flex-shrink-0 group-hover:bg-white/10 transition">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                            </div>
+                            <span class="text-sm">github.com/KovaliykSerhii</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/serhii-kovaliyk-8446a940a/" class="flex items-center gap-4 text-zinc-400 hover:text-white transition group">
+                            <div class="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center flex-shrink-0 group-hover:bg-white/10 transition">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                            </div>
+                            <span class="text-sm">linkedin.com</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Форма -->
+                <div>
+                    <form id="contactForm" class="space-y-4">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="text-zinc-600 text-xs font-mono uppercase tracking-widest block mb-2">Ім'я</label>
+                                <input type="text" placeholder="Сергій" required class="input-field">
+                            </div>
+                            <div>
+                                <label class="text-zinc-600 text-xs font-mono uppercase tracking-widest block mb-2">Email</label>
+                                <input type="email" placeholder="kovaliykserhii@gmail.com" required class="input-field">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="text-zinc-600 text-xs font-mono uppercase tracking-widest block mb-2">Тема</label>
+                            <input type="text" placeholder="Про що хочеш поговорити?" class="input-field">
+                        </div>
+                        <div>
+                            <label class="text-zinc-600 text-xs font-mono uppercase tracking-widest block mb-2">Повідомлення</label>
+                            <textarea rows="5" placeholder="Розкажи детальніше..." required class="input-field resize-none"></textarea>
+                        </div>
+                        <button type="submit" class="btn-main w-full">Відправити</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ФУТЕР ===== -->
+    <footer class="border-t border-white/5 py-8">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
+            <p class="font-mono text-zinc-600 text-xs">© 2026 Сергій Ковалюк</p>
+            <p class="text-zinc-700 text-xs font-mono">Зроблено з ☕ та VS Code</p>
+        </div>
+    </footer>
+
+    <script src="js/nav.js"></script>
+    <script src="js/scroll.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+</html>
+

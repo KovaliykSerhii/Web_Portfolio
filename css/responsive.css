@@ -1,0 +1,9 @@
+/* Медіа-запити, адаптив сіток та мобільні фиксы */
+
+@media (max-width: 768px) {
+    .skills-bento { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+    .projects-bento { grid-template-columns: 1fr; }
+}
