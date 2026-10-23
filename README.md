@@ -45,4 +45,4 @@ Feel free to reach out if you want to collaborate, have a question, or just want
 - **Telegram**: [@killedInMay](https://t.me/killedInMay)
 
 ---
-*Made with ☕ and VS Code*
+live demo https://kovaliykserhii.github.io/Web_Portfolio/
